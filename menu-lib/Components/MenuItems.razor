@@ -1,0 +1,14 @@
+﻿<ul style="display: flex; flex-direction: @(rootNotInitialized ? "row" : "column"); opacity:@(rootNotInitialized ? 1 : 0); position: @(rootNotInitialized ? "static" : "absolute")">
+    @ChildContent
+</ul>
+
+@code {
+    private bool rootNotInitialized;
+    private int id;
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        rootNotInitialized = Code.RootState.IsRootInitialized();
+    }
+}

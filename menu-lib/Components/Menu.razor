@@ -1,0 +1,16 @@
+﻿<HeadContent>
+    <script type="text/javascript" src="_content/menu-lib/menu.js"></script>
+</HeadContent>
+
+<nav>
+    @ChildContent
+</nav>
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Code.RootState.Init();
+    }
+}

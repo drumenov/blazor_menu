@@ -1,0 +1,26 @@
+﻿ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 0;
+    margin: 0;
+}
+
+/*div {
+    position: relative;
+}*/
+
+.opened {
+    animation: open 0.1s ease-in forwards;
+    z-index: 1;
+}
+
+@keyframes open {
+    to {
+        opacity: 1;
+    }
+}
+

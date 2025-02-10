@@ -1,0 +1,66 @@
+﻿@page "/"
+
+<Menu>
+    <MenuItems>
+        <MenuItem Text="Main Item 1">
+            <MenuItems>
+                <MenuItem Text="Sub Item 1.1">
+                    <MenuItems>
+                        <MenuItem Text="Sub Sub Item 1.1.1"></MenuItem>
+                        <MenuItem Text="Sub Sub Item 1.1.2">
+                            <MenuItems>
+                                <MenuItem Text="Deep Nested Item 1.1.2.1"></MenuItem>
+                                <MenuItem Text="Deep Nested Item 1.1.2.2"></MenuItem>
+                            </MenuItems>
+                        </MenuItem>
+                    </MenuItems>
+                </MenuItem>
+                <MenuItem Text="Sub Item 1.2"></MenuItem>
+            </MenuItems>
+        </MenuItem>
+        <MenuItem Text="Main Item 2">
+            <MenuItems>
+                <MenuItem Text="Sub Item 2.1"></MenuItem>
+                <MenuItem Text="Sub Item 2.2">
+                    <MenuItems>
+                        <MenuItem Text="Sub Sub Item 2.2.1"></MenuItem>
+                        <MenuItem Text="Sub Sub Item 2.2.2">
+                            <MenuItems>
+                                <MenuItem Text="Deep Nested Item 2.2.2.1"></MenuItem>
+                                <MenuItem Text="Deep Nested Item 2.2.2.2"></MenuItem>
+                            </MenuItems>
+                        </MenuItem>
+                    </MenuItems>
+                </MenuItem>
+                <MenuItem Text="Sub Item 2.3"></MenuItem>
+            </MenuItems>
+        </MenuItem>
+        <MenuItem Text="Main Item 3">
+            <MenuItems>
+                <MenuItem Text="Sub Item 3.1"></MenuItem>
+                <MenuItem Text="Sub Item 3.2">
+                    <MenuItems>
+                        <MenuItem Text="Sub Sub Item 3.2.1"></MenuItem>
+                        <MenuItem Text="Sub Sub Item 3.2.2"></MenuItem>
+                    </MenuItems>
+                </MenuItem>
+            </MenuItems>
+        </MenuItem>
+    </MenuItems>
+</Menu>
+<script>
+    document.addEventListener("DOMContentLoaded", function attachMenuClickHandler() {
+    attachMenuAction("Sub Sub Item 1.1.1", function handle111() { console.log("Handling 1.1.1...")});
+    attachMenuAction("Deep Nested Item 1.1.2.1", function handle1121() { console.log("Handling 1.1.2.1..."); });
+    attachMenuAction("Deep Nested Item 1.1.2.2", function handle1122() { console.log("Handling 1.1.2.2..."); });
+    attachMenuAction("Sub Item 1.2", function handle12() { console.log("Handling 1.2..."); });
+    attachMenuAction("Sub Item 2.1", function handle21() { console.log("Handling 2.1..."); });
+    attachMenuAction("Sub Sub Item 2.2.1", function handleSubItem221() { console.log("handling 2.2.1..." ); });
+    attachMenuAction("Deep Nested Item 2.2.2.1", function handleSubItem2221() { console.log("handling 2.2.2.1..."); });
+    attachMenuAction("Deep Nested Item 2.2.2.2", function handleSubItem2222() { console.log("handling 2.2.2.2..."); });
+    attachMenuAction("Sub Item 2.3", function handle23() { console.log("Handling 2.3..."); });
+    attachMenuAction("Sub Item 3.1", function handle31() { console.log("Handling 3.1..."); });
+    attachMenuAction("Sub Sub Item 3.2.1", function handleSubItem321() { console.log("handling 3.2.1..."); });
+    attachMenuAction("Sub Sub Item 3.2.2", function handleSubItem322() { console.log("handling 3.2.2..."); });
+    });
+</script>
